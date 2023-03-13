@@ -30,12 +30,12 @@
 
 	function downloadCV() {
 		// Replace the URL below with the path to your CV file
-		var fileUrl = '/files/Roy_Eugene_Resume1.pdf';
+		var fileUrl = '/files/RESUME.pdf';
 		
 		// Create a temporary anchor element to trigger the download
 		var downloadLink = document.createElement('a');
 		downloadLink.href = fileUrl;
-		downloadLink.download = '/files/Roy_Eugene_Resume1.pdf';
+		downloadLink.download = '/files/RESUME.pdf';
 		downloadLink.click();
 	  }
 	  
