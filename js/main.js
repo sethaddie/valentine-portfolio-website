@@ -22,6 +22,25 @@
 	};
 	fullHeight();
 
+	//Download CV Functionality
+	var downloadBtn = document.getElementById('download-btn');
+	downloadBtn.addEventListener('click', downloadCV);
+
+
+
+	function downloadCV() {
+		// Replace the URL below with the path to your CV file
+		var fileUrl = '/files/RESUME.pdf';
+		
+		// Create a temporary anchor element to trigger the download
+		var downloadLink = document.createElement('a');
+		downloadLink.href = fileUrl;
+		downloadLink.download = '/files/RESUME.pdf';
+		downloadLink.click();
+	  }
+	  
+
+
 	// loader
 	var loader = function() {
 		setTimeout(function() { 
