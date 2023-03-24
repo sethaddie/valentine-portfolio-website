@@ -30,12 +30,12 @@
 
 	function downloadCV() {
 		// Replace the URL below with the path to your CV file
-		var fileUrl = '/files/RESUME.pdf';
+		var fileUrl = '/files/My Resume.pdf';
 		
 		// Create a temporary anchor element to trigger the download
 		var downloadLink = document.createElement('a');
 		downloadLink.href = fileUrl;
-		downloadLink.download = '/files/RESUME.pdf';
+		downloadLink.download = 'Valentine Seth Abayo Resume';
 		downloadLink.click();
 	  }
 	  
