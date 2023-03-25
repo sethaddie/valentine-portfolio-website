@@ -30,7 +30,7 @@
 
 	function downloadCV() {
 		// Replace the URL below with the path to your CV file
-		var fileUrl = '/files/My Resume.pdf';
+		var fileUrl = '/files/ValentineCV.pdf';
 		
 		// Create a temporary anchor element to trigger the download
 		var downloadLink = document.createElement('a');
