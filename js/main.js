@@ -1,4 +1,4 @@
- (function($) {
+(function($) {
 
 	"use strict";
 
@@ -11,22 +11,51 @@
     scrollProperty: 'scroll'
   });
 
+  //Handle form data
+  const form = document.querySelector('#test-form');
 
-	var fullHeight = function() {
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  const formData = new FormData(form);
+  
+  fetch('/submit-form', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error('Something went wrong');
+    }
+  })
+  .then(data => {
+    console.log(data);
+    alert('Your message has been sent!');
+    form.reset();
+  })
+  .catch(error => {
+    console.error(error);
+    alert('There was an error sending your message. Please try again later.');
+  });
+});
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
 
-	};
-	fullHeight();
 
-	//Download CV Functionality
+
+
+  //Download CV Functionality
 	var downloadBtn = document.getElementById('download-btn');
 	downloadBtn.addEventListener('click', downloadCV);
-
-
 
 	function downloadCV() {
 		// Replace the URL below with the path to your CV file
@@ -40,6 +69,17 @@
 	  }
 	  
 
+
+
+	var fullHeight = function() {
+
+		$('.js-fullheight').css('height', $(window).height());
+		$(window).resize(function(){
+			$('.js-fullheight').css('height', $(window).height());
+		});
+
+	};
+	fullHeight();
 
 	// loader
 	var loader = function() {
