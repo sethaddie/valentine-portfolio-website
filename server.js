@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Enable cross-origin resource sharing
 app.use(cors());
 
+//setting up Nodemailer
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
