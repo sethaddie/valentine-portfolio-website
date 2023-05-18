@@ -59,7 +59,7 @@ form.addEventListener('submit', (event) => {
 
 	function downloadCV() {
 		// Replace the URL below with the path to your CV file
-		var fileUrl = '/files/ValentineCV.pdf';
+		var fileUrl = '/files/Valentine_Seith Abayo_Resume.pdf';
 		
 		// Create a temporary anchor element to trigger the download
 		var downloadLink = document.createElement('a');
